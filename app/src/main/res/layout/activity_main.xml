@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/outerLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:paddingLeft="16dp"
+    android:paddingTop="20dp"
+    android:paddingRight="16dp"
+    android:paddingBottom="20dp"
+    >
+
+
+
+    <EditText
+        android:layout_marginTop="50dp"
+        android:id="@+id/email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        android:textSize="24dp"
+        android:paddingBottom="24dp"
+
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Password"
+        android:textSize="24dp"
+        android:layout_below="@id/email"
+        android:inputType="textPassword"
+
+        android:id="@+id/password"
+        android:paddingBottom="24dp"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Confirm Password"
+        android:textSize="24dp"
+        android:layout_below="@id/password"
+        android:inputType="textPassword"
+
+        android:id="@+id/confirm_password"
+        android:paddingBottom="24dp"
+        />
+
+
+    <Button
+        android:id="@+id/buttonSignUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/confirm_password"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:text="SignUp"
+        android:textAllCaps="false"
+        android:textSize="20dp" />
+
+
+    <TextView
+        android:id="@+id/buttonSignIn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/sign_in_text"
+        android:layout_below="@id/buttonSignUp"
+        android:textSize="20dp"
+        android:textColorHighlight="@color/teal_200"
+        />
+
+</RelativeLayout>
+
+
+
