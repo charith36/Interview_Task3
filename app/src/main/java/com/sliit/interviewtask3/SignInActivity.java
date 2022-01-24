@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class SignInActivity extends AppCompatActivity {
     EditText email,password;
@@ -51,6 +52,7 @@ public class SignInActivity extends AppCompatActivity {
         //Empty field validation
         if(emailText.isEmpty() || passwordText.isEmpty()) {
             //display an error message
+            Toast.makeText(getApplicationContext(),"Please fill all fields",Toast.LENGTH_SHORT).show();
         } else {
             //search database
         }

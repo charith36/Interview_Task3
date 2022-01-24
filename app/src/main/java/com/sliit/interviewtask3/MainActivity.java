@@ -8,6 +8,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.util.regex.Pattern;
 
 public class MainActivity extends AppCompatActivity {
     EditText email,password,confirm_password;
@@ -53,14 +56,21 @@ public class MainActivity extends AppCompatActivity {
         //validate empty fields
         if(emailText.isEmpty() || passwordText.isEmpty() || confirmPasswordText.isEmpty()) {
             // display and error message
+            Toast.makeText(getApplicationContext(),"Please fill all fields",Toast.LENGTH_SHORT).show();
         } else {
             //validate email
-
-            //validate password
-            if(!passwordText.equals(confirmPasswordText)) {
-                //display an error message
+            String emailPattern = "^(.+)@(.+)$";
+            if(Pattern.compile(emailPattern).matcher(email.getText().toString()).matches()) {
+                //validate password
+                if(!passwordText.equals(confirmPasswordText)) {
+                    //display an error message
+                    Toast.makeText(getApplicationContext(),"Password and Confirm Password does not match!",Toast.LENGTH_SHORT).show();
+                } else {
+                    //enter to the database;
+                }
             } else {
-                //enter to the database;
+                //Email validation failed
+                Toast.makeText(getApplicationContext(),"Invalid email address",Toast.LENGTH_SHORT).show();
             }
         }
     }
